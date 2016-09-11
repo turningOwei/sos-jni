@@ -1,0 +1,20 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="com.jiaofei.service.student.impl.OrgTypes"%>
+<!-- 系统变量配置 -->
+<script type="text/javascript">
+	SysConfig = function () {
+		return {
+			ctx    	   		: '${ctx}',
+			staticPath 		: '${staticPath}',
+			jsPath     		: '${staticPath}/js',
+			printPath		: '${staticPath}/print',
+			pageSize   		: 100,
+			org				: {
+				type_grade  : '<%=OrgTypes.GRADE.getCode()%>',
+				type_ffyr	: '<%=OrgTypes.FFYR.getCode()%>',
+				type_major  : '<%=OrgTypes.MAJOR.getCode()%>',
+				type_class	: '<%=OrgTypes.CLASS.getCode()%>'
+			}
+		};
+	}();
+</script>

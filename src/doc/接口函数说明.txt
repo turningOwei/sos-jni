@@ -1,0 +1,108 @@
+//初始化网络 参数一：本地IP 参数二：服务器IP 参数三：本地设备ID(不能和其他设备ID冲突 否则无法上线)
+BOOL InitNetwork(char LocalIP[],char ServerIP[],int LocalDeviceID)
+
+//播放歌曲结束回调函数定义  参数：第三方自定义歌曲列表序号、歌曲在第三方列表中的序号、设备数量、设备列表、用户句柄、服务器任务号
+typedef BOOL (*PlayEndCallBack)(int UseListIndex,int UserMusicIndex,int DeviceCout,PUINT lpDeviceID,HWND hWnd,UINT TaskCode)
+
+//初始化网络后向服务器注册播放歌曲结束的回调函数
+BOOL InitCallBackFunc(PlayEndCallBack m_callback,HWND hWnd)
+
+//初始化网络后判断服务器是否在线 
+BOOL GetOnlineStatus()
+
+//获取服务器歌曲目录数量
+int GetMusicDirNum()
+
+//获取服务器第几个歌曲目录的歌曲数量
+int GetDirSongNum(int DirIndex)
+
+//获取服务器第几个歌曲目录名称
+char* GetMusicDirName(int DirIndex)
+
+//获取服务器第几个目录的第几首歌曲名称
+char* GetMusicSongName(int DirIndex,int SongIndex)
+
+//获取服务器设备总数量
+int GetDeviceNumber()
+
+//获取服务器第几个设备信息  每个设备包含了 以“|”分隔的7个信息分别为： 设备ID|设备IP|设备名字|设备类型|设备当前状态|设备音量|设备其他信息
+char* GetIndexDeviceInfo(int DeviceIndex)
+
+//断开与主机连接 并释放资源 
+void ExitNetwork()
+
+//控制播放设备播放服务器歌曲 参数：主机歌曲目录序号、歌曲在主机相应目录中的序号、设备数量、设备列表、第三方自定义歌曲列表序号、歌曲在用户列表中的序号
+int PlayServerMusic(int DirIndex,int MusicIndex,int DeviceCout,PUINT lpDeviceID,int UseListIndex,int UserMusicIndex,UINT TaskCode)
+
+//控制播放设备停止播放服务器歌曲
+int StopServerMusic(int DeviceCout,PUINT lpDeviceID)
+
+//设置设备音量(只有在控制设备播放歌曲的时候才能设置生效)
+int SetDeviceVolume(int DeviceCout,PUINT lpDeviceID,BYTE byVolume)
+
+
+
+//设备状态参考信息
+enum EMDeviceState//设备当前状态信息
+{
+	stateMC			= 0,	//服务器寻呼
+	stateWarning	        = 1,	//告警
+	stateCalled		= 2,	//被寻呼
+	stateCall               = 3,    //发起寻呼
+	stateTalk               = 4,    //对讲
+	statePhone		= 5,	//电话
+	stateChime		= 6,	//钟声
+	stateMusic		= 7,	//服务器广播节目或者采集音源
+	stateOrder		= 8,	//点播
+	stateTime		= 9,	//定时
+	stateOFFLINE	       = 14,	//离线
+	stateTraning           = 15,    //中转中,中转服务器的状态
+	stateCollecting        =16,     //正在采集中,音频采集卡状态
+	stateTouchWarning      =17,     //网络警报设备,触发警报中
+	stateControlOtherDevPlayMusicing=18,//控制其它设备播放广播
+	stateMonitor=19,                //监听状态
+	stateFireWarning=20,            //消防告警
+	stateLowest		= 31	//空闲
+};
+
+//设备类型参考信息
+enum EMDeviceType                     //设备类型
+{
+	devOneChaPlaying			      =1,		//网络化播放终端
+	devMoreChaPlaying           =2,		//机架式网络化终端
+	devOneKeyTalkPlaying        =3,    //求助对讲扩展控制器
+	devOneChaOrderPlaying			  = 4,		//网络化点播面板
+	devOneChaPhonePlaying			  = 5,		//网络化工业电话对讲终端
+	devTwoKeyTalkPlaying        =6,    //两用对讲扩展控制器
+	devOneKeyAlarmPlaying       =7,   //网络化报警终端
+	devWirelessRemotePlaying    =8,  //无线遥控控制器
+	devHangingCalling           =9,  //挂壁式智能寻呼台
+	devCallingPlaying           = 10,		//寻呼播放设备
+	devCallingWatch             = 11,		//寻呼监视设备
+	devCalling                  = 12,		//智能寻呼站
+	devSoundBoxPlaying          =13,   //网络化音箱
+	//devWIFISoundBoxPlaying      =14,   //网络化WIFI音箱
+	devPowerPlayPlaying         =15,//网络化播放功放
+	//devPoleAlarmPlaying         =16,//网络化柱式报警终端
+	devCollection               = 20,		//音频采集卡
+	devTelephoneCalling         = 21,		//电话寻呼卡
+	devPCSubControl             = 30,		//网络化分控寻呼软件
+	devHandsetControl           = 31,		//安桌分控寻呼软件
+	devSDKSystem                = 32,		//第三方系统
+	devTransferServer           = 40,		//中转服务器
+	devSubServer               = 41,		//二级主机
+	devPCHostControl            = 50,		//PC远程控制软件
+	devNetAlarm                 = 51,		//网络消防联动终端
+	devNULL			                       ,//空的设备类型
+};
+
+
+
+
+
+
+
+
+
+
+
