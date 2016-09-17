@@ -25,7 +25,6 @@
         scriptSrc = scripts[i].src;
 
         match = scriptSrc.match(/ext-bootstrap\.js$/);
-
         if (match) {
             /**
              * use a path without the ext-bootstrap.js file on it. http://path/to/ext/ext-bootstrap.js will become
@@ -60,6 +59,6 @@
         isDevelopment = false;
     }
 
-    document.write('<script type="text/javascript" charset="UTF-8" src="' +
-        path + 'build/ext-all' + (isDevelopment ? '-debug' : '') + '.js"></script>');
+    /*document.write('<script type="text/javascript" charset="UTF-8" src="' +
+        path + 'build/ext-all' + (isDevelopment ? '-debug' : '') + '.js"></script>');*/
 })();
