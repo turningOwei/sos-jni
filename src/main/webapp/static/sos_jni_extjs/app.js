@@ -7,7 +7,7 @@ Ext.application({
     name: 'Sos.jni',
 
     extend: 'Sos.jni.Application',
-
+    appFolder : 'static/sos_jni_extjs/app',
     requires: [
         'Sos.jni.view.main.Main'
     ],

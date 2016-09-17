@@ -4,7 +4,7 @@
  *
  * TODO - Replace this content of this view to suite the needs of your application.
  */
-Ext.define('Sos.jni.view.main.MainController', {
+Ext.define('Sos.jni.controller.MainController', {
     extend: 'Ext.app.ViewController',
 
     alias: 'controller.main',
@@ -12,7 +12,7 @@ Ext.define('Sos.jni.view.main.MainController', {
     onItemSelected: function (sender, record) {
         Ext.Msg.confirm('Confirm', 'Are you sure?', 'onConfirm', this);
     },
-
+    
     onConfirm: function (choice) {
         if (choice === 'yes') {
             //
