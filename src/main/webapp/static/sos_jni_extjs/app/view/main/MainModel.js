@@ -7,7 +7,7 @@ Ext.define('Sos.jni.view.main.MainModel', {
     alias: 'viewmodel.main',
 
     data: {
-        name: 'Sos.jni',
+        appName: 'SOS监控',
 
         loremIpsum: '监控sos设备情况'
     }

@@ -41,7 +41,8 @@ var staticExtPath = contextPath + "/static/sos_jni_extjs/";
 		    
 		    paths:{
 		    	'Sos.jni.view'  		:  	'http://localhost:8080/sos_jni/static/sos_jni_extjs/app/view',
-		    	'Sos.jni.store'	 		: 	'http://localhost:8080/sos_jni/static/sos_jni_extjs/app/store'
+		    	'Sos.jni.store'	 		: 	'http://localhost:8080/sos_jni/static/sos_jni_extjs/app/store',
+		    	'Sos.jni.model'			:   'http://localhost:8080/sos_jni/static/sos_jni_extjs/app/model'
 		    } 
 		 });
 	}); 

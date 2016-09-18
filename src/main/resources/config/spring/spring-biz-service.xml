@@ -22,4 +22,6 @@
     <bean id="netServerInterfaceService" class="sos_jni.service.impl.NetServerInterfaceServiceImpl"/>
     <!-- jni -->
     <bean id="sosJni" class="sos_jni.jni.impl.ConDllDemo"/>
+    <bean id="deviceService" class="sos_jni.service.impl.DeviceServiceImpl"/>
+    
 </beans> 

@@ -4,14 +4,14 @@ Ext.define('Sos.jni.store.Personnel', {
     alias: 'store.personnel',
 
     fields: [
-        'name', 'email', 'phone'
+             'deviceId','deviceIp','deviceType','deviceStatus','deviceVolume','deviceOtherInfo'
     ],
 
     data: { items: [
-        { name: 'Jean Luc', email: "jeanluc.picard@enterprise.com", phone: "555-111-1111" },
-        { name: 'Worf',     email: "worf.moghsson@enterprise.com",  phone: "555-222-2222" },
-        { name: 'Deanna',   email: "deanna.troi@enterprise.com",    phone: "555-333-3333" },
-        { name: 'Data',     email: "mr.data@enterprise.com",        phone: "555-444-4444" }
+        { deviceId: 'Jean Luc', deviceIp: "jeanluc.picard@enterprise.com", deviceStatus: "555-111-1111",deviceVolume:"",deviceOtherInfo:"" },
+        { deviceId: 'Worf',     deviceIp: "worf.moghsson@enterprise.com",  deviceStatus: "555-222-2222" ,deviceVolume:"",deviceOtherInfo:""},
+        { deviceId: 'Deanna',   deviceIp: "deanna.troi@enterprise.com",    deviceStatus: "555-333-3333" ,deviceVolume:"",deviceOtherInfo:""},
+        { deviceId: 'Data',     deviceIp: "mr.data@enterprise.com",        deviceStatus: "555-444-4444",deviceVolume:"",deviceOtherInfo:"" }
     ]},
 
     proxy: {

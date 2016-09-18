@@ -8,13 +8,13 @@
 Ext.define('Sos.jni.view.main.Main', {
     extend: 'Ext.tab.Panel',
     xtype: 'app-main',
-
     requires: [
         'Ext.plugin.Viewport',
         'Ext.window.MessageBox',
 
         'Sos.jni.view.main.MainController',
         'Sos.jni.view.main.MainModel',
+        'Sos.jni.model.DeviceModel',
         'Sos.jni.view.main.List'
     ],
 
@@ -33,7 +33,7 @@ Ext.define('Sos.jni.view.main.Main', {
         },
         title: {
             bind: {
-                text: 'SOS报警'
+                text: '{appName}'
             },
             flex: 0
         },
@@ -76,19 +76,17 @@ Ext.define('Sos.jni.view.main.Main', {
     },
 
     items: [{
-        title: '首页',
-        iconCls: 'fa-home',
-        // The following grid shares a store with the classic version's grid as well!
-        items: [{
-            xtype: 'mainlist'
-        }]
-    }, {
         title: 'sos实时',
         iconCls: 'fa-refresh',
         // The following grid shares a store with the classic version's grid as well!
         items: [{
+        	//id	 : Ext.id(),
             xtype: 'mainlist'
-        }]
+        }],
+        listeners: {
+        	//由controller控制
+        	activate : 'sosPanelActivate'
+        }
     }, {
         title: '说明',
         iconCls: 'fa-user',
@@ -96,4 +94,5 @@ Ext.define('Sos.jni.view.main.Main', {
             html: '{loremIpsum}'
         }
     }]
+    
 });

@@ -6,22 +6,31 @@ Ext.define('Sos.jni.view.main.List', {
     xtype: 'mainlist',
 
     requires: [
-        'Sos.jni.store.Personnel'
+        'Sos.jni.store.Device'
     ],
 
-    title: 'Personnel',
+    title: '设备信息',
 
     store: {
-        type: 'personnel'
+        type: 'device'
     },
 
     columns: [
-        { text: '姓名',  dataIndex: 'name' },
-        { text: '邮箱', dataIndex: 'email', flex: 1 },
-        { text: '电话', dataIndex: 'phone', flex: 1 }
+        { text: '设备ID', 		dataIndex: 'deviceId' },
+        { text: '设备IP', 		dataIndex: 'deviceIp', 			flex: 1 },
+        { text: '设备类型', 		dataIndex: 'deviceType', 		flex: 1 },
+        { text: '设备当前状态', 	dataIndex: 'deviceStatus', 		flex: 1 },
+        { text: '设备音量', 		dataIndex: 'deviceVolume', 		flex: 1 },
+        { text: '设备其他信息', 	dataIndex: 'deviceOtherInfo', 	flex: 1 }
     ],
 
     listeners: {
-        select: 'onItemSelected'
+        select: 'onItemSelected',
+        rowclick : function( thiz , record , tr , rowIndex , e , eOpts){
+        	console.log(this.getStore());
+        },
+        afterlayout :function( thiz , layout , eOpts ) {
+        	console.log(this.getStore());
+        }
     }
 });
