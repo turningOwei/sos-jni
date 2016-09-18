@@ -10,7 +10,7 @@ Ext.define('Sos.jni.view.main.MainController', {
     alias: 'controller.main',
 
     onItemSelected: function (sender, record) {
-        Ext.Msg.confirm('Confirm', 'Are you sure?', 'onConfirm', this);
+        Ext.Msg.confirm('确定', 'Are you sure?', 'onConfirm', this);
     },
     
     onConfirm: function (choice) {

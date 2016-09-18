@@ -16,9 +16,9 @@ Ext.define('Sos.jni.view.main.List', {
     },
 
     columns: [
-        { text: 'Name',  dataIndex: 'name' },
-        { text: 'Email', dataIndex: 'email', flex: 1 },
-        { text: 'Phone', dataIndex: 'phone', flex: 1 }
+        { text: '姓名',  dataIndex: 'name' },
+        { text: '邮箱', dataIndex: 'email', flex: 1 },
+        { text: '电话', dataIndex: 'phone', flex: 1 }
     ],
 
     listeners: {
