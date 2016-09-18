@@ -20,47 +20,31 @@ var staticExtPath = contextPath + "/static/sos_jni_extjs/";
  <meta http-equiv="X-UA-Compatible" content="IE=edge">
 </head>
 <body>
-
 <script type="text/javascript" defer>
-	/* Ext.onReady(function() {
-		Ext.Msg.alert('Title', 'The quick brown fox jumped over the lazy dog.', Ext.emptyFn);
-	}); */
-	 Ext.application({
-		/* appFolder : 'static/sos_jni_extjs/app',
-		name: 'Sos.jni',
-		//加载  .../app/model/MainModel.js
-		models: ['MainModel'],
-		//加载  .../app/controller/MainController.js
-		controllers: ['MainController'],
-		//加载  .../app/store/Personnel.js
-		stores:['Personnel'],
-		
-		
-	    launch: function() {
-	        
-	    } */
-	    appFolder : 'static/sos_jni_extjs/app',
-	    
-		name: 'Sos.jni',
+	Ext.onReady(function() {
+		Ext.application({
+		    appFolder : 'static/sos_jni_extjs/app',
+		    
+			name: 'Sos.jni',
 
-		extend: 'Sos.jni.Application',
+			extend: 'Sos.jni.Application',
 
-	    requires: [
-	        'Sos.jni.view.main.Main'
-	    ],
+		    requires: [
+		        'Sos.jni.view.main.Main'
+		    ],
 
-	    // The name of the initial view to create. With the classic toolkit this class
-	    // will gain a "viewport" plugin if it does not extend Ext.Viewport. With the
-	    // modern toolkit, the main view will be added to the Viewport.
-	    //
-	    mainView: 'Sos.jni.view.main.Main',
-	    
-	    paths:{
-	    	//'Sos.jni.view.main'   :  'http://localhost:8080/sos_jni/sos/static/sos_jni_extjs/app/view/main"
-	    }
-	 });
-	</script>
-	<script type="text/javascript">
+		    // The name of the initial view to create. With the classic toolkit this class
+		    // will gain a "viewport" plugin if it does not extend Ext.Viewport. With the
+		    // modern toolkit, the main view will be added to the Viewport.
+		    //
+		    mainView: 'Sos.jni.view.main.Main',
+		    
+		    paths:{
+		    	'Sos.jni.view.'  		:  	'http://localhost:8080/sos_jni/static/sos_jni_extjs/app/view',
+		    	'Sos.jni.store'	 		: 	'http://localhost:8080/sos_jni/static/sos_jni_extjs/app/store'
+		    } 
+		 });
+	}); 
 	</script>
 </body>
 </html>
