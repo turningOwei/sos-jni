@@ -80,7 +80,7 @@ Ext.define('Sos.jni.view.main.Main', {
         iconCls: 'fa-refresh',
         // The following grid shares a store with the classic version's grid as well!
         items: [{
-        	//id	 : Ext.id(),
+        	id	 : 'realTimePanelId',
             xtype: 'mainlist'
         }],
         listeners: {

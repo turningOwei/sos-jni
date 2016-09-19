@@ -16,8 +16,8 @@ Ext.define('Sos.jni.view.main.List', {
     },
 
     columns: [
-        { text: '设备ID', 		dataIndex: 'deviceId' },
-        { text: '设备IP', 		dataIndex: 'deviceIp', 			flex: 1 },
+        { text: '设备ID', 		dataIndex: 'deviceId',			width:100},
+        { text: '设备IP', 		dataIndex: 'deviceIp', 			width:100,		flex: 1 },
         { text: '设备类型', 		dataIndex: 'deviceType', 		flex: 1 },
         { text: '设备当前状态', 	dataIndex: 'deviceStatus', 		flex: 1 },
         { text: '设备音量', 		dataIndex: 'deviceVolume', 		flex: 1 },
@@ -30,7 +30,7 @@ Ext.define('Sos.jni.view.main.List', {
         	console.log(this.getStore());
         },
         afterlayout :function( thiz , layout , eOpts ) {
-        	console.log(this.getStore());
+        	//console.log(this.getStore());
         }
     }
 });

@@ -20,31 +20,19 @@ Ext.define('Sos.jni.view.main.MainController', {
     },
     
     sosPanelActivate : function(newActiveItem , thiz , oldActiveItem , eOpts){
-    	/*Ext.Ajax.request({
-    	     url: 'http://localhost:8080/sos_jni/sos/deviceInfo',
-
-    	     success: function(response, opts) {
-    	         var obj = Ext.decode(response.responseText);
-    	         //console.dir(obj);
-    	         console.log(newActiveItem);
-    	     },
-
-    	     failure: function(response, opts) {
-    	         console.log('server-side failure with status code ' + response.status);
-    	     }
-    	 });*/
-    	
     	var runner = new Ext.util.TaskRunner(),
         task;
 
 	    task = runner.newTask({
 	        run: function() {
-	        	//console.log(newActiveItem);
+	        	var realPanel = Ext.getCmp('realTimePanelId');
+	    	    realPanel.getStore().reload();
 	        },
-	        interval: 1000
+	        interval: sendTime
 	    });
-
-		//task.start();
+	    
+		task.start();
 	},
+	
 	
 });
