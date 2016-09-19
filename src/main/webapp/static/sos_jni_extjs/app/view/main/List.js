@@ -26,9 +26,9 @@ Ext.define('Sos.jni.view.main.List', {
 
     listeners: {
         select: 'onItemSelected',
-        rowclick : function( thiz , record , tr , rowIndex , e , eOpts){
+        /*rowclick : function( thiz , record , tr , rowIndex , e , eOpts){
         	console.log(this.getStore());
-        },
+        },*/
         afterlayout :function( thiz , layout , eOpts ) {
         	//console.log(this.getStore());
         }
