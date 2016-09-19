@@ -33,9 +33,9 @@ Ext.define('Sos.jni.store.Device', {
     }*/
     model: 'Sos.jni.model.DeviceModel',
     proxy: {
-        type: 'ajax',
+        type	: 'ajax',
         autoLoad: true,
-        url: 'http://localhost:8080/sos_jni/sos/deviceInfo',
+        url		: contextPath+'/sos/deviceInfo',
         reader: {
             type: 'json',
             rootProperty: 'items'
@@ -43,7 +43,7 @@ Ext.define('Sos.jni.store.Device', {
     },
     listeners : {
     	beforeload : function( store , operation , eOpts){
-    		console.log("store.beforeload");
+    		
     	}
     }
 });
