@@ -34,5 +34,10 @@ Ext.define('Sos.jni.view.main.MainController', {
 		task.start();
 	},
 	
+	smokesensorPanelActivate : function(newActiveItem , thiz , oldActiveItem , eOpts){
+		var smokeSensorPanel = Ext.getCmp('smokeSensorPanelId');
+		smokeSensorPanel.getStore().reload();
+	}
+	
 	
 });

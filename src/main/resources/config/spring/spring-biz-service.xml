@@ -23,5 +23,5 @@
     <!-- jni -->
     <bean id="sosJni" class="sos_jni.jni.impl.ConDllDemo"/>
     <bean id="deviceService" class="sos_jni.service.impl.DeviceServiceImpl"/>
-    
+    <bean id="smokeSensorService" class="sos_jni.service.smokesensor.impl.SmokeSensorServiceImpl"/>
 </beans> 

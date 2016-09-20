@@ -15,7 +15,9 @@ Ext.define('Sos.jni.view.main.Main', {
         'Sos.jni.view.main.MainController',
         'Sos.jni.view.main.MainModel',
         'Sos.jni.model.DeviceModel',
-        'Sos.jni.view.main.List'
+        'Sos.jni.view.main.List',
+        'Sos.jni.view.main.SmokeSensorPanel',
+        'Sos.jni.view.main.MainPanel'
     ],
 
     controller: 'main',
@@ -88,6 +90,30 @@ Ext.define('Sos.jni.view.main.Main', {
         	activate : 'sosPanelActivate'
         }
     }, {
+    	title: '烟感实时',
+        iconCls: 'fa-refresh',
+        // The following grid shares a store with the classic version's grid as well!
+        items: [{
+        	id	 : 'smokeSensorPanelId',
+            xtype: 'smokeSensorPanel'
+        }],
+        listeners: {
+        	//由controller控制
+        	activate : 'smokesensorPanelActivate'
+        }
+    },{//mainpanel
+    	title: '测试',
+        iconCls: 'fa-refresh',
+        // The following grid shares a store with the classic version's grid as well!
+        items: [{
+        	id	 : 'mainpanelId',
+            xtype: 'mainpanel'
+        }],
+        listeners: {
+        	//由controller控制
+        	//activate : 'smokesensorPanelActivate'
+        }
+    },{
         title: '说明',
         iconCls: 'fa-user',
         bind: {
