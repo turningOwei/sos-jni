@@ -19,7 +19,8 @@ Ext.define('Sos.jni.view.main.MainController', {
         }
     },
     
-   /* sosPanelActivate : function(newActiveItem , thiz , oldActiveItem , eOpts){
+    sosPanelActivate : function(newActiveItem , thiz , oldActiveItem , eOpts){
+    	var sendTime = 3000;
     	var runner = new Ext.util.TaskRunner(),
         task;
 
@@ -32,7 +33,7 @@ Ext.define('Sos.jni.view.main.MainController', {
 	    });
 	    
 		task.start();
-	},*/
+	},
 	
 	/*smokesensorPanelActivate : function(newActiveItem , thiz , oldActiveItem , eOpts){
 		var smokeSensorPanel = Ext.getCmp('smokeSensorPanelId');
