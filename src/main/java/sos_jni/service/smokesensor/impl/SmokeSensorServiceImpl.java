@@ -25,7 +25,10 @@ public class SmokeSensorServiceImpl
 		String jsonp = HttpObject.getJsonByGet(param.getUrl());
 		Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd").create();
 		SmokeSensorResp<SmokeSensorEntity> result = null;
-		String json = jsonp.substring(1, jsonp.length()-2);
+		String json = "";
+		if (StringUtils.isNotEmpty(jsonp)) {
+			json = jsonp.substring(1, jsonp.length()-1);
+		}
 		if (StringUtils.isNotEmpty(json)) {
 			result = gson.fromJson(json,
 					new TypeToken<SmokeSensorResp<SmokeSensorEntity>>() {
@@ -42,5 +45,4 @@ public class SmokeSensorServiceImpl
 		return result.getData();
 	}
 	
-
 }
