@@ -27,6 +27,7 @@ public class SmokeSensorServiceImpl
 		SmokeSensorResp<SmokeSensorEntity> result = null;
 		String json = "";
 		if (StringUtils.isNotEmpty(jsonp)) {
+			jsonp = jsonp.trim();
 			json = jsonp.substring(1, jsonp.length()-1);
 		}
 		if (StringUtils.isNotEmpty(json)) {
@@ -45,4 +46,5 @@ public class SmokeSensorServiceImpl
 		return result.getData();
 	}
 	
+
 }
