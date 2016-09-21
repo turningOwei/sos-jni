@@ -77,7 +77,19 @@ Ext.define('Sos.jni.view.main.Main', {
         }
     },
 
-    items: [{
+    items: [{//mainpanel
+    	title: '测试',
+        iconCls: 'fa-refresh',
+        // The following grid shares a store with the classic version's grid as well!
+        items: [{
+        	id	 : 'mainpanelId',
+            xtype: 'mainpanel'
+        }],
+        autoScroll : true,
+        listeners	: {
+        	activate : 'mainPanelActivate'
+        }
+    },{
         title: 'sos实时',
         iconCls: 'fa-refresh',
         // The following grid shares a store with the classic version's grid as well!
@@ -100,18 +112,6 @@ Ext.define('Sos.jni.view.main.Main', {
         listeners: {
         	//由controller控制
         	activate : 'smokesensorPanelActivate'
-        }
-    },{//mainpanel
-    	title: '测试',
-        iconCls: 'fa-refresh',
-        // The following grid shares a store with the classic version's grid as well!
-        items: [{
-        	id	 : 'mainpanelId',
-            xtype: 'mainpanel'
-        }],
-        listeners: {
-        	//由controller控制
-        	//activate : 'smokesensorPanelActivate'
         }
     },{
         title: '说明',

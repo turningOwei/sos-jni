@@ -19,7 +19,7 @@ Ext.define('Sos.jni.view.main.MainController', {
         }
     },
     
-    sosPanelActivate : function(newActiveItem , thiz , oldActiveItem , eOpts){
+   /* sosPanelActivate : function(newActiveItem , thiz , oldActiveItem , eOpts){
     	var runner = new Ext.util.TaskRunner(),
         task;
 
@@ -32,11 +32,32 @@ Ext.define('Sos.jni.view.main.MainController', {
 	    });
 	    
 		task.start();
-	},
+	},*/
 	
-	smokesensorPanelActivate : function(newActiveItem , thiz , oldActiveItem , eOpts){
+	/*smokesensorPanelActivate : function(newActiveItem , thiz , oldActiveItem , eOpts){
 		var smokeSensorPanel = Ext.getCmp('smokeSensorPanelId');
 		smokeSensorPanel.getStore().reload();
+	},*/
+	
+	mainPanelActivate : function(newActiveItem , thiz , oldActiveItem , eOpts){
+		var sendTime = 3000;
+		
+		var mainPanelSmokeSensorPanel = Ext.getCmp('mainPanelSmokeSensorId');
+		
+		var mainPanelSosPanel = Ext.getCmp('mainPanelSosId');
+		
+		var runner = new Ext.util.TaskRunner(),
+        task;
+
+	    task = runner.newTask({
+	        run: function() {
+	        	mainPanelSmokeSensorPanel.getStore().reload();
+	        	mainPanelSosPanel.getStore().reload();
+	        },
+	        interval: sendTime
+	    });
+	    
+		task.start();
 	}
 	
 	

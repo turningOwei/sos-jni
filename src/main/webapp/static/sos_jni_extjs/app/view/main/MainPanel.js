@@ -8,15 +8,17 @@ Ext.define('Sos.jni.view.main.MainPanel', {
     layout	:'column',
     items	: [{
         title	: 'sos监控',
+        id		: 'mainPanelSosId',
         xtype	: 'mainlist',
-        height	: 320,
+        //height	: 320,
         columnWidth: 1,
         autoScroll	: true
     },{
-        title  	: '烟感监控',
-        xtype	: 'smokeSensorPanel',
-        height	: 320,
-        columnWidth: 1,
-        autoScroll	: true,
+        title  		: '烟感监控',
+        id			: 'mainPanelSmokeSensorId',
+        xtype		: 'smokeSensorPanel',
+       // height		: 320,
+        columnWidth	: 1,
+        autoScroll	: true
     }]
 });
