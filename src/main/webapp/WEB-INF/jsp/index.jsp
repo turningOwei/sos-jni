@@ -21,7 +21,6 @@ var staticExtPath = contextPath + "/static/sos_jni_extjs/";
 </head>
 <body>
 <script type="text/javascript" defer>
-	var sendTime = 3000;
 	Ext.onReady(function() {
 		Ext.application({
 		    //appFolder : 'static/sos_jni_extjs/app',
