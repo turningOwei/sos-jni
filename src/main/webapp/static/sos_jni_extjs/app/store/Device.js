@@ -4,7 +4,13 @@ Ext.define('Sos.jni.store.Device', {
     alias: 'store.device',
 
     fields: [
-             'deviceId','deviceIp','deviceType','deviceStatus','deviceVolume','deviceOtherInfo'
+		'devId',		
+		'devIp', 	
+		'devName', 	
+		'devType', 	
+		'devState', 	
+		'devVolume', 
+		'remark'
     ],
     data : {},
     /*data: { items: [
@@ -35,7 +41,7 @@ Ext.define('Sos.jni.store.Device', {
     proxy: {
         type	: 'ajax',
         autoLoad: true,
-        url		: contextPath+'/sos/deviceInfo',
+        url		: contextPath+'/sosDevice/deviceInfo',
         reader: {
             type: 'json',
             rootProperty: 'items'

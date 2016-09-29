@@ -19,9 +19,10 @@
     	  <!-- 工具类 -->
    	<bean id="gson" class="com.google.gson.Gson"/>
     	  <!-- services -->
-    <bean id="netServerInterfaceService" class="sos_jni.service.impl.NetServerInterfaceServiceImpl"/>
+    <bean id="netServerInterfaceService" class="monitor.service.impl.NetServerInterfaceServiceImpl"/>
     <!-- jni -->
-    <bean id="sosJni" class="sos_jni.jni.impl.ConDllDemo"/>
-    <bean id="deviceService" class="sos_jni.service.impl.DeviceServiceImpl"/>
-    <bean id="smokeSensorService" class="sos_jni.service.smokesensor.impl.SmokeSensorServiceImpl"/>
+    <bean id="sosJni" class="monitor.jni.impl.ConDllDemo"/>
+    <bean id="deviceService" class="monitor.service.impl.DeviceServiceImpl"/>
+    <bean id="smokeSensorService" class="monitor.service.smokesensor.impl.SmokeSensorServiceImpl"/>
+    <bean id="sosSensorService" class="monitor.service.sossensor.impl.SosSensorServiceImpl"/>
 </beans> 

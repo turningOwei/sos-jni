@@ -9,7 +9,7 @@ var staticExtPath = contextPath + "/static/sos_jni_extjs/";
 </script>
 <head>
  	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-     <title>SOS报警</title>
+     <title>大佛寺实时监控</title>
      <script type="text/javascript" src="<%=this.getServletContext().getContextPath() %>/static/sos_jni_extjs/ext/build/ext-all-debug.js?dc_='<%=new java.util.Date().getTime()%>'"></script>
      <script type="text/javascript" src="<%=this.getServletContext().getContextPath() %>/static/sos_jni_extjs/ext/locale/locale-zh_CN.js"></script>
      <script type="text/javascript" src="<%=this.getServletContext().getContextPath() %>/static/sos_jni_extjs/loadConfig.js?dc_='<%=new java.util.Date().getTime()%>'"></script>
